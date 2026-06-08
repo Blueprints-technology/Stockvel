@@ -1,0 +1,6 @@
+-- V3 feature expansion migration placeholder.
+-- Apply via `prisma migrate dev` after generating the SQL from the updated schema.
+-- Models added: SectorCategory, AssetCategory, NewsSource, ArticleCategory, Article,
+-- ArticleBookmark, ResearchReport, PodcastEpisode, TreasuryBill,
+-- NewsletterSubscriber, Newsletter, StockDataProvider, ProviderStatusLog.
+-- Fields extended: News.sourceId/sourceRef metadata, StockPrice.providerId.

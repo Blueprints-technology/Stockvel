@@ -1,0 +1,21 @@
+{
+  "name": "financial-market-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:web dev:api",
+    "dev:web": "npm run dev --workspace @fmp/web",
+    "dev:api": "npm run start:dev --workspace @fmp/api",
+    "build": "npm run build --workspace @fmp/web && npm run build --workspace @fmp/api",
+    "test": "npm run test --workspace @fmp/api && npm run test --workspace @fmp/web",
+    "seed": "npm run prisma:seed --workspace @fmp/api",
+    "lint": "npm run lint --workspace @fmp/web && npm run lint --workspace @fmp/api"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

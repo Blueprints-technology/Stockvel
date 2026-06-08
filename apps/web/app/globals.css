@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+html,
+body {
+  /* Clean neutral background – no tinted radial gradient */
+  background-color: #f8f8f8;
+  color: #0f172a;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Accessible scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.12) transparent;
+}
+
+/* Reduced motion – WCAG 2.1 §2.3.3 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  /* Layout wrapper */
+  .page-shell {
+    @apply mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-md border border-slate-200 bg-white shadow-card;
+  }
+
+  /**
+   * floating-panel – use ONLY for sticky header, modals, dropdowns.
+   * These genuinely sit over content and benefit from blur.
+   */
+  .floating-panel {
+    @apply rounded-md border border-white/70 bg-white/90 shadow-elevated backdrop-blur-sm;
+  }
+
+  /* Typography roles */
+  .text-body {
+    @apply text-body;
+  }
+  .text-caption {
+    @apply text-caption;
+  }
+
+  /* Unified section heading (was inconsistent – report §1.5) */
+  .section-title {
+    @apply text-title text-slate-900;
+  }
+
+  /* Consistent button radius & touch targets */
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm px-4 py-2 text-sm font-semibold transition;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand;
+  }
+  .btn-secondary {
+    @apply btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand;
+  }
+
+  /* Table row touch area – each row is fully tappable (report §6.3) */
+  .table-row-link {
+    @apply block px-5 py-4 hover:bg-slate-50 transition;
+  }
+
+  /* Mobile card row – used when table converts to card layout (report §6.1) */
+  .asset-card-row {
+    @apply flex items-center justify-between gap-3 rounded-md border border-slate-100 bg-white px-4 py-3;
+  }
+}
