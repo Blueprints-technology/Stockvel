@@ -7,7 +7,6 @@ import { useState } from "react";
 import {
   Activity,
   BarChart3,
-  BriefcaseBusiness,
   Coins,
   GraduationCap,
   LayoutDashboard,
@@ -16,26 +15,20 @@ import {
   Newspaper,
   Search,
   Shapes,
-  ShieldCheck,
-  Star,
-  User,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// 🚀 MINIMAL V1: Protected routes removed from navigation
 const navItems = [
   { href: "/home", label: "Overview", icon: LayoutDashboard },
   { href: "/stocks", label: "Stocks", icon: Activity },
   { href: "/crypto", label: "Crypto", icon: Coins },
-  { href: "/portfolio", label: "Portfolio", icon: BriefcaseBusiness },
-  { href: "/watchlist", label: "Watchlist", icon: Star },
   { href: "/learn", label: "Learn", icon: GraduationCap },
   { href: "/research", label: "Research", icon: LibraryBig },
   { href: "/insights", label: "Insights", icon: BarChart3 },
   { href: "/news", label: "News", icon: Newspaper },
   { href: "/categories", label: "Themes", icon: Shapes },
   { href: "/newsletter", label: "Newsletter", icon: Mail },
-  { href: "/profile", label: "Profile", icon: User },
-  { href: "/admin", label: "Admin", icon: ShieldCheck },
 ];
 
 function GlobalSearch() {
@@ -93,6 +86,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </header>
 
+      {/* Navigation */}
       <nav className="sticky top-20 z-30 border-b border-slate-200 bg-white/95 backdrop-blur md:static md:mt-8 md:border-0 md:bg-transparent">
         <div className="page-shell">
           <div className="flex gap-2 overflow-x-auto py-3 md:flex-wrap md:justify-center md:overflow-visible">
@@ -120,8 +114,10 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </nav>
 
+      {/* Main Content */}
       <main className="page-shell flex-1">{children}</main>
 
+      {/* Footer */}
       <footer className="mt-12 border-t border-slate-200 bg-white">
         <div className="page-shell py-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
