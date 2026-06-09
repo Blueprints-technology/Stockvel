@@ -15,6 +15,8 @@ RUN npm run build
 
 FROM node:22-alpine AS runtime
 WORKDIR /app/apps/api
+RUN ls -la /app/apps/api/
+RUN ls -la /app/apps/api/dist/ || echo "dist folder missing!"
 ENV NODE_ENV=production
 
 COPY --from=base /app/node_modules ./node_modules
