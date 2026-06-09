@@ -12,14 +12,12 @@ setDefaultResultOrder("ipv4first");
 
 async function bootstrap() {
   console.log("=== BOOTSTRAP START ===");
-  console.log("PORT env:", process.env.PORT);
+  console.log("Raw process.env.PORT:", process.env.PORT);
   console.log("NODE_ENV:", process.env.NODE_ENV);
   console.log("DATABASE_URL set:", !!process.env.DATABASE_URL);
   console.log("REDIS_URL set:", !!process.env.REDIS_URL);
 
-  const app = await NestFactory.create(AppModule, {
-    cors: false,
-  });
+  const app = await NestFactory.create(AppModule, { cors: false });
 
   const configService = app.get(ConfigService);
   const prismaService = app.get(PrismaService);
@@ -43,9 +41,7 @@ async function bootstrap() {
       whitelist: true,
       transform: true,
       forbidUnknownValues: false,
-      transformOptions: {
-        enableImplicitConversion: true,
-      },
+      transformOptions: { enableImplicitConversion: true },
     }),
   );
 
@@ -62,10 +58,11 @@ async function bootstrap() {
 
   await prismaService.enableShutdownHooks(app);
 
-  const port = configService.get<number>("app.port") ?? 4000;
+  const port = parseInt(process.env.PORT || "4000", 10);
   console.log(`Attempting to listen on port: ${port}`);
 
-  await app.listen(port);
+  await app.listen(port, "0.0.0.0");
+
   console.log(`=== SERVER RUNNING ON PORT ${port} ===`);
 }
 
