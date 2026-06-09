@@ -14,6 +14,11 @@ const app_module_1 = require("./app.module");
 const prisma_service_1 = require("./prisma/prisma.service");
 (0, node_dns_1.setDefaultResultOrder)("ipv4first");
 async function bootstrap() {
+    console.log("=== BOOTSTRAP START ===");
+    console.log("PORT env:", process.env.PORT);
+    console.log("NODE_ENV:", process.env.NODE_ENV);
+    console.log("DATABASE_URL set:", !!process.env.DATABASE_URL);
+    console.log("REDIS_URL set:", !!process.env.REDIS_URL);
     const app = await core_1.NestFactory.create(app_module_1.AppModule, {
         cors: false,
     });
@@ -48,7 +53,14 @@ async function bootstrap() {
     const swaggerDocument = swagger_1.SwaggerModule.createDocument(app, swaggerConfig);
     swagger_1.SwaggerModule.setup("api/docs", app, swaggerDocument);
     await prismaService.enableShutdownHooks(app);
-    await app.listen(configService.get("app.port") ?? 4001);
+    const port = configService.get("app.port") ?? 4000;
+    console.log(`Attempting to listen on port: ${port}`);
+    await app.listen(port);
+    console.log(`=== SERVER RUNNING ON PORT ${port} ===`);
 }
-bootstrap();
+bootstrap().catch((error) => {
+    console.error("=== BOOTSTRAP FAILED ===");
+    console.error(error);
+    process.exit(1);
+});
 //# sourceMappingURL=main.js.map

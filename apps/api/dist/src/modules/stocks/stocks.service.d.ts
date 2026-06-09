@@ -12,26 +12,26 @@ export declare class StocksService {
                     name: string;
                     createdAt: Date;
                     updatedAt: Date;
-                    slug: string;
                     description: string | null;
+                    slug: string;
                     icon: string | null;
                     color: string | null;
                 };
             } & {
                 id: string;
                 createdAt: Date;
-                categoryId: string;
                 stockId: string | null;
                 cryptoAssetId: string | null;
+                categoryId: string;
             })[];
         } & {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
+            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -59,9 +59,9 @@ export declare class StocksService {
             user: {
                 profile: {
                     id: string;
+                    userId: string;
                     createdAt: Date;
                     updatedAt: Date;
-                    userId: string;
                     displayName: string;
                     username: string;
                     avatarUrl: string | null;
@@ -69,20 +69,20 @@ export declare class StocksService {
                 } | null;
             } & {
                 id: string;
+                createdAt: Date;
+                updatedAt: Date;
                 email: string;
                 passwordHash: string;
                 role: import(".prisma/client").$Enums.Role;
                 isEmailVerified: boolean;
-                createdAt: Date;
-                updatedAt: Date;
             };
             replies: ({
                 user: {
                     profile: {
                         id: string;
+                        userId: string;
                         createdAt: Date;
                         updatedAt: Date;
-                        userId: string;
                         displayName: string;
                         username: string;
                         avatarUrl: string | null;
@@ -90,18 +90,18 @@ export declare class StocksService {
                     } | null;
                 } & {
                     id: string;
+                    createdAt: Date;
+                    updatedAt: Date;
                     email: string;
                     passwordHash: string;
                     role: import(".prisma/client").$Enums.Role;
                     isEmailVerified: boolean;
-                    createdAt: Date;
-                    updatedAt: Date;
                 };
             } & {
                 id: string;
+                userId: string;
                 createdAt: Date;
                 updatedAt: Date;
-                userId: string;
                 content: string;
                 upvotes: number;
                 isModerated: boolean;
@@ -109,9 +109,9 @@ export declare class StocksService {
             })[];
         } & {
             id: string;
+            userId: string;
             createdAt: Date;
             updatedAt: Date;
-            userId: string;
             assetType: import(".prisma/client").$Enums.AssetType;
             assetSymbol: string;
             content: string;
@@ -125,8 +125,8 @@ export declare class StocksService {
                 createdAt: Date;
                 updatedAt: Date;
                 slug: string;
-                isActive: boolean;
                 baseUrl: string;
+                isActive: boolean;
                 config: Prisma.JsonValue;
                 lastFetchedAt: Date | null;
                 logoUrl: string | null;
@@ -138,30 +138,30 @@ export declare class StocksService {
             updatedAt: Date;
             assetType: import(".prisma/client").$Enums.AssetType | null;
             assetSymbol: string | null;
-            content: string;
+            imageUrl: string | null;
             slug: string;
+            categoryId: string | null;
+            content: string;
+            sourceId: string | null;
             title: string;
             excerpt: string;
             source: string;
             sourceUrl: string;
             externalUrl: string | null;
             author: string | null;
-            imageUrl: string | null;
             categoryLabel: string | null;
             publishedAt: Date;
             isInsight: boolean;
             trendingScore: number;
-            categoryId: string | null;
-            sourceId: string | null;
         })[];
         peers: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
+            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -182,9 +182,9 @@ export declare class StocksService {
                 createdAt: Date;
                 updatedAt: Date;
                 slug: string;
-                isActive: boolean;
                 baseUrl: string;
                 apiKey: string | null;
+                isActive: boolean;
                 priority: number;
                 rateLimitPerMin: number;
                 config: Prisma.JsonValue;
@@ -196,11 +196,11 @@ export declare class StocksService {
             volume: number | null;
             stockId: string;
             date: Date;
+            providerId: string | null;
             open: number;
             high: number;
             low: number;
             close: number;
-            providerId: string | null;
         })[];
         assetCategories: ({
             category: {
@@ -208,25 +208,25 @@ export declare class StocksService {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                slug: string;
                 description: string | null;
+                slug: string;
                 icon: string | null;
                 color: string | null;
             };
         } & {
             id: string;
             createdAt: Date;
-            categoryId: string;
             stockId: string | null;
             cryptoAssetId: string | null;
+            categoryId: string;
         })[];
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        description: string | null;
         ticker: string;
         companyName: string;
         sector: string;
+        description: string | null;
         currentPrice: number;
         dailyChange: number;
         percentChange: number;
@@ -247,26 +247,26 @@ export declare class StocksService {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                slug: string;
                 description: string | null;
+                slug: string;
                 icon: string | null;
                 color: string | null;
             };
         } & {
             id: string;
             createdAt: Date;
-            categoryId: string;
             stockId: string | null;
             cryptoAssetId: string | null;
+            categoryId: string;
         })[];
     } & {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        description: string | null;
         ticker: string;
         companyName: string;
         sector: string;
+        description: string | null;
         currentPrice: number;
         dailyChange: number;
         percentChange: number;
@@ -284,10 +284,10 @@ export declare class StocksService {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        description: string | null;
         ticker: string;
         companyName: string;
         sector: string;
+        description: string | null;
         currentPrice: number;
         dailyChange: number;
         percentChange: number;
@@ -305,10 +305,10 @@ export declare class StocksService {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        description: string | null;
         ticker: string;
         companyName: string;
         sector: string;
+        description: string | null;
         currentPrice: number;
         dailyChange: number;
         percentChange: number;
@@ -324,10 +324,10 @@ export declare class StocksService {
     }[]>;
     providers(): Prisma.PrismaPromise<({
         statusLogs: {
-            status: import(".prisma/client").$Enums.ProviderHealthStatus;
             id: string;
             createdAt: Date;
             providerId: string;
+            status: import(".prisma/client").$Enums.ProviderHealthStatus;
             responseTimeMs: number;
             errorMessage: string | null;
         }[];
@@ -337,9 +337,9 @@ export declare class StocksService {
         createdAt: Date;
         updatedAt: Date;
         slug: string;
-        isActive: boolean;
         baseUrl: string;
         apiKey: string | null;
+        isActive: boolean;
         priority: number;
         rateLimitPerMin: number;
         config: Prisma.JsonValue;

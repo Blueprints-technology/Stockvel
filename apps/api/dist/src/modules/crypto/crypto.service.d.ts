@@ -12,17 +12,17 @@ export declare class CryptoService {
                     name: string;
                     createdAt: Date;
                     updatedAt: Date;
-                    slug: string;
                     description: string | null;
+                    slug: string;
                     icon: string | null;
                     color: string | null;
                 };
             } & {
                 id: string;
                 createdAt: Date;
-                categoryId: string;
                 stockId: string | null;
                 cryptoAssetId: string | null;
+                categoryId: string;
             })[];
         } & {
             symbol: string;
@@ -30,13 +30,13 @@ export declare class CryptoService {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            imageUrl: string | null;
             description: string | null;
             currentPrice: number;
             marketCap: number | null;
             trendScore: number;
             lastUpdatedAt: Date | null;
             coingeckoId: string;
+            imageUrl: string | null;
             change24h: number;
             volume24h: number | null;
             circulatingSupply: number | null;
@@ -54,9 +54,9 @@ export declare class CryptoService {
             user: {
                 profile: {
                     id: string;
+                    userId: string;
                     createdAt: Date;
                     updatedAt: Date;
-                    userId: string;
                     displayName: string;
                     username: string;
                     avatarUrl: string | null;
@@ -64,20 +64,20 @@ export declare class CryptoService {
                 } | null;
             } & {
                 id: string;
+                createdAt: Date;
+                updatedAt: Date;
                 email: string;
                 passwordHash: string;
                 role: import(".prisma/client").$Enums.Role;
                 isEmailVerified: boolean;
-                createdAt: Date;
-                updatedAt: Date;
             };
             replies: ({
                 user: {
                     profile: {
                         id: string;
+                        userId: string;
                         createdAt: Date;
                         updatedAt: Date;
-                        userId: string;
                         displayName: string;
                         username: string;
                         avatarUrl: string | null;
@@ -85,18 +85,18 @@ export declare class CryptoService {
                     } | null;
                 } & {
                     id: string;
+                    createdAt: Date;
+                    updatedAt: Date;
                     email: string;
                     passwordHash: string;
                     role: import(".prisma/client").$Enums.Role;
                     isEmailVerified: boolean;
-                    createdAt: Date;
-                    updatedAt: Date;
                 };
             } & {
                 id: string;
+                userId: string;
                 createdAt: Date;
                 updatedAt: Date;
-                userId: string;
                 content: string;
                 upvotes: number;
                 isModerated: boolean;
@@ -104,9 +104,9 @@ export declare class CryptoService {
             })[];
         } & {
             id: string;
+            userId: string;
             createdAt: Date;
             updatedAt: Date;
-            userId: string;
             assetType: import(".prisma/client").$Enums.AssetType;
             assetSymbol: string;
             content: string;
@@ -120,8 +120,8 @@ export declare class CryptoService {
                 createdAt: Date;
                 updatedAt: Date;
                 slug: string;
-                isActive: boolean;
                 baseUrl: string;
+                isActive: boolean;
                 config: Prisma.JsonValue;
                 lastFetchedAt: Date | null;
                 logoUrl: string | null;
@@ -133,21 +133,21 @@ export declare class CryptoService {
             updatedAt: Date;
             assetType: import(".prisma/client").$Enums.AssetType | null;
             assetSymbol: string | null;
-            content: string;
+            imageUrl: string | null;
             slug: string;
+            categoryId: string | null;
+            content: string;
+            sourceId: string | null;
             title: string;
             excerpt: string;
             source: string;
             sourceUrl: string;
             externalUrl: string | null;
             author: string | null;
-            imageUrl: string | null;
             categoryLabel: string | null;
             publishedAt: Date;
             isInsight: boolean;
             trendingScore: number;
-            categoryId: string | null;
-            sourceId: string | null;
         })[];
         prices: {
             id: string;
@@ -166,30 +166,30 @@ export declare class CryptoService {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                slug: string;
                 description: string | null;
+                slug: string;
                 icon: string | null;
                 color: string | null;
             };
         } & {
             id: string;
             createdAt: Date;
-            categoryId: string;
             stockId: string | null;
             cryptoAssetId: string | null;
+            categoryId: string;
         })[];
         symbol: string;
         id: string;
         name: string;
         createdAt: Date;
         updatedAt: Date;
-        imageUrl: string | null;
         description: string | null;
         currentPrice: number;
         marketCap: number | null;
         trendScore: number;
         lastUpdatedAt: Date | null;
         coingeckoId: string;
+        imageUrl: string | null;
         change24h: number;
         volume24h: number | null;
         circulatingSupply: number | null;
@@ -205,13 +205,13 @@ export declare class CryptoService {
         name: string;
         createdAt: Date;
         updatedAt: Date;
-        imageUrl: string | null;
         description: string | null;
         currentPrice: number;
         marketCap: number | null;
         trendScore: number;
         lastUpdatedAt: Date | null;
         coingeckoId: string;
+        imageUrl: string | null;
         change24h: number;
         volume24h: number | null;
         circulatingSupply: number | null;

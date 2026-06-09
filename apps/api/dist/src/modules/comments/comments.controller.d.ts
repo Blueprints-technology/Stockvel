@@ -9,9 +9,9 @@ export declare class CommentsController {
         user: {
             profile: {
                 id: string;
+                userId: string;
                 createdAt: Date;
                 updatedAt: Date;
-                userId: string;
                 displayName: string;
                 username: string;
                 avatarUrl: string | null;
@@ -19,20 +19,20 @@ export declare class CommentsController {
             } | null;
         } & {
             id: string;
+            createdAt: Date;
+            updatedAt: Date;
             email: string;
             passwordHash: string;
             role: import(".prisma/client").$Enums.Role;
             isEmailVerified: boolean;
-            createdAt: Date;
-            updatedAt: Date;
         };
         replies: ({
             user: {
                 profile: {
                     id: string;
+                    userId: string;
                     createdAt: Date;
                     updatedAt: Date;
-                    userId: string;
                     displayName: string;
                     username: string;
                     avatarUrl: string | null;
@@ -40,18 +40,18 @@ export declare class CommentsController {
                 } | null;
             } & {
                 id: string;
+                createdAt: Date;
+                updatedAt: Date;
                 email: string;
                 passwordHash: string;
                 role: import(".prisma/client").$Enums.Role;
                 isEmailVerified: boolean;
-                createdAt: Date;
-                updatedAt: Date;
             };
         } & {
             id: string;
+            userId: string;
             createdAt: Date;
             updatedAt: Date;
-            userId: string;
             content: string;
             upvotes: number;
             isModerated: boolean;
@@ -59,9 +59,9 @@ export declare class CommentsController {
         })[];
     } & {
         id: string;
+        userId: string;
         createdAt: Date;
         updatedAt: Date;
-        userId: string;
         assetType: import(".prisma/client").$Enums.AssetType;
         assetSymbol: string;
         content: string;
@@ -70,9 +70,9 @@ export declare class CommentsController {
     })[]>;
     create(user: AuthenticatedUser, dto: CreateCommentDto): Promise<{
         id: string;
+        userId: string;
         createdAt: Date;
         updatedAt: Date;
-        userId: string;
         assetType: import(".prisma/client").$Enums.AssetType;
         assetSymbol: string;
         content: string;
@@ -81,9 +81,9 @@ export declare class CommentsController {
     }>;
     reply(user: AuthenticatedUser, commentId: string, dto: ReplyCommentDto): Promise<{
         id: string;
+        userId: string;
         createdAt: Date;
         updatedAt: Date;
-        userId: string;
         content: string;
         upvotes: number;
         isModerated: boolean;
@@ -91,9 +91,9 @@ export declare class CommentsController {
     }>;
     upvote(commentId: string): Promise<{
         id: string;
+        userId: string;
         createdAt: Date;
         updatedAt: Date;
-        userId: string;
         assetType: import(".prisma/client").$Enums.AssetType;
         assetSymbol: string;
         content: string;

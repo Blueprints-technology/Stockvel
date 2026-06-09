@@ -20,8 +20,8 @@ export declare class CategoriesController {
         name: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         icon: string | null;
         color: string | null;
     }[]>;
@@ -30,10 +30,10 @@ export declare class CategoriesController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
+            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -53,13 +53,13 @@ export declare class CategoriesController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            imageUrl: string | null;
             description: string | null;
             currentPrice: number;
             marketCap: number | null;
             trendScore: number;
             lastUpdatedAt: Date | null;
             coingeckoId: string;
+            imageUrl: string | null;
             change24h: number;
             volume24h: number | null;
             circulatingSupply: number | null;
@@ -69,10 +69,10 @@ export declare class CategoriesController {
                 id: string;
                 createdAt: Date;
                 updatedAt: Date;
-                description: string | null;
                 ticker: string;
                 companyName: string;
                 sector: string;
+                description: string | null;
                 currentPrice: number;
                 dailyChange: number;
                 percentChange: number;
@@ -92,13 +92,13 @@ export declare class CategoriesController {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                imageUrl: string | null;
                 description: string | null;
                 currentPrice: number;
                 marketCap: number | null;
                 trendScore: number;
                 lastUpdatedAt: Date | null;
                 coingeckoId: string;
+                imageUrl: string | null;
                 change24h: number;
                 volume24h: number | null;
                 circulatingSupply: number | null;
@@ -106,16 +106,16 @@ export declare class CategoriesController {
         } & {
             id: string;
             createdAt: Date;
-            categoryId: string;
             stockId: string | null;
             cryptoAssetId: string | null;
+            categoryId: string;
         })[];
         id: string;
         name: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         icon: string | null;
         color: string | null;
     }>;
@@ -125,8 +125,8 @@ export declare class CategoriesController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
             icon: string | null;
             color: string | null;
         };
@@ -137,26 +137,26 @@ export declare class CategoriesController {
                     name: string;
                     createdAt: Date;
                     updatedAt: Date;
-                    slug: string;
                     description: string | null;
+                    slug: string;
                     icon: string | null;
                     color: string | null;
                 };
             } & {
                 id: string;
                 createdAt: Date;
-                categoryId: string;
                 stockId: string | null;
                 cryptoAssetId: string | null;
+                categoryId: string;
             })[];
         } & {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
+            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -183,8 +183,8 @@ export declare class CategoriesController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
             icon: string | null;
             color: string | null;
         };
@@ -195,17 +195,17 @@ export declare class CategoriesController {
                     name: string;
                     createdAt: Date;
                     updatedAt: Date;
-                    slug: string;
                     description: string | null;
+                    slug: string;
                     icon: string | null;
                     color: string | null;
                 };
             } & {
                 id: string;
                 createdAt: Date;
-                categoryId: string;
                 stockId: string | null;
                 cryptoAssetId: string | null;
+                categoryId: string;
             })[];
         } & {
             symbol: string;
@@ -213,13 +213,13 @@ export declare class CategoriesController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            imageUrl: string | null;
             description: string | null;
             currentPrice: number;
             marketCap: number | null;
             trendScore: number;
             lastUpdatedAt: Date | null;
             coingeckoId: string;
+            imageUrl: string | null;
             change24h: number;
             volume24h: number | null;
             circulatingSupply: number | null;

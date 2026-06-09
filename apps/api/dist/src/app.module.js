@@ -59,11 +59,23 @@ exports.AppModule = AppModule = __decorate([
             bullmq_1.BullModule.forRootAsync({
                 imports: [config_1.ConfigModule],
                 inject: [config_1.ConfigService],
-                useFactory: (configService) => ({
-                    connection: {
-                        url: configService.get('redis.url'),
-                    },
-                }),
+                useFactory: (configService) => {
+                    const redisUrl = configService.get("redis.url");
+                    if (!redisUrl) {
+                        console.warn("[BullMQ] REDIS_URL not set — background jobs disabled");
+                        return {
+                            connection: {
+                                host: "localhost",
+                                port: 6379,
+                            },
+                        };
+                    }
+                    return {
+                        connection: {
+                            url: redisUrl,
+                        },
+                    };
+                },
             }),
             schedule_1.ScheduleModule.forRoot(),
             prisma_module_1.PrismaModule,

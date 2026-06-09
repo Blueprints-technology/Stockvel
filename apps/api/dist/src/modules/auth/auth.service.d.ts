@@ -18,21 +18,21 @@ export declare class AuthService {
             role: import(".prisma/client").$Enums.Role;
             profile: {
                 id: string;
+                userId: string;
                 createdAt: Date;
                 updatedAt: Date;
-                userId: string;
                 displayName: string;
                 username: string;
                 avatarUrl: string | null;
                 bio: string | null;
             } | null;
             notifications: {
-                message: string;
-                type: import(".prisma/client").$Enums.NotificationType;
                 id: string;
-                createdAt: Date;
                 userId: string;
+                createdAt: Date;
                 title: string;
+                type: import(".prisma/client").$Enums.NotificationType;
+                message: string;
                 isRead: boolean;
             }[];
         };
@@ -46,21 +46,21 @@ export declare class AuthService {
             role: import(".prisma/client").$Enums.Role;
             profile: {
                 id: string;
+                userId: string;
                 createdAt: Date;
                 updatedAt: Date;
-                userId: string;
                 displayName: string;
                 username: string;
                 avatarUrl: string | null;
                 bio: string | null;
             } | null;
             notifications: {
-                message: string;
-                type: import(".prisma/client").$Enums.NotificationType;
                 id: string;
-                createdAt: Date;
                 userId: string;
+                createdAt: Date;
                 title: string;
+                type: import(".prisma/client").$Enums.NotificationType;
+                message: string;
                 isRead: boolean;
             }[];
         };
@@ -74,21 +74,21 @@ export declare class AuthService {
             role: import(".prisma/client").$Enums.Role;
             profile: {
                 id: string;
+                userId: string;
                 createdAt: Date;
                 updatedAt: Date;
-                userId: string;
                 displayName: string;
                 username: string;
                 avatarUrl: string | null;
                 bio: string | null;
             } | null;
             notifications: {
-                message: string;
-                type: import(".prisma/client").$Enums.NotificationType;
                 id: string;
-                createdAt: Date;
                 userId: string;
+                createdAt: Date;
                 title: string;
+                type: import(".prisma/client").$Enums.NotificationType;
+                message: string;
                 isRead: boolean;
             }[];
         };
@@ -112,21 +112,21 @@ export declare class AuthService {
         role: import(".prisma/client").$Enums.Role;
         profile: {
             id: string;
+            userId: string;
             createdAt: Date;
             updatedAt: Date;
-            userId: string;
             displayName: string;
             username: string;
             avatarUrl: string | null;
             bio: string | null;
         } | null;
         notifications: {
-            message: string;
-            type: import(".prisma/client").$Enums.NotificationType;
             id: string;
-            createdAt: Date;
             userId: string;
+            createdAt: Date;
             title: string;
+            type: import(".prisma/client").$Enums.NotificationType;
+            message: string;
             isRead: boolean;
         }[];
     }>;

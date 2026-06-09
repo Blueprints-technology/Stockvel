@@ -10,8 +10,8 @@ export declare class NewsService {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
         } | null;
         sourceRef: {
             id: string;
@@ -19,8 +19,8 @@ export declare class NewsService {
             createdAt: Date;
             updatedAt: Date;
             slug: string;
-            isActive: boolean;
             baseUrl: string;
+            isActive: boolean;
             config: Prisma.JsonValue;
             lastFetchedAt: Date | null;
             logoUrl: string | null;
@@ -32,21 +32,21 @@ export declare class NewsService {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        content: string;
+        imageUrl: string | null;
         slug: string;
+        categoryId: string | null;
+        content: string;
+        sourceId: string | null;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
-        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
-        categoryId: string | null;
-        sourceId: string | null;
     })[]>;
     sources(): Prisma.PrismaPromise<{
         id: string;
@@ -54,8 +54,8 @@ export declare class NewsService {
         createdAt: Date;
         updatedAt: Date;
         slug: string;
-        isActive: boolean;
         baseUrl: string;
+        isActive: boolean;
         config: Prisma.JsonValue;
         lastFetchedAt: Date | null;
         logoUrl: string | null;
@@ -68,8 +68,8 @@ export declare class NewsService {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                slug: string;
                 description: string | null;
+                slug: string;
             } | null;
             sourceRef: {
                 id: string;
@@ -77,8 +77,8 @@ export declare class NewsService {
                 createdAt: Date;
                 updatedAt: Date;
                 slug: string;
-                isActive: boolean;
                 baseUrl: string;
+                isActive: boolean;
                 config: Prisma.JsonValue;
                 lastFetchedAt: Date | null;
                 logoUrl: string | null;
@@ -90,29 +90,29 @@ export declare class NewsService {
             updatedAt: Date;
             assetType: import(".prisma/client").$Enums.AssetType | null;
             assetSymbol: string | null;
-            content: string;
+            imageUrl: string | null;
             slug: string;
+            categoryId: string | null;
+            content: string;
+            sourceId: string | null;
             title: string;
             excerpt: string;
             source: string;
             sourceUrl: string;
             externalUrl: string | null;
             author: string | null;
-            imageUrl: string | null;
             categoryLabel: string | null;
             publishedAt: Date;
             isInsight: boolean;
             trendingScore: number;
-            categoryId: string | null;
-            sourceId: string | null;
         })[];
         category: {
             id: string;
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
         } | null;
         sourceRef: {
             id: string;
@@ -120,8 +120,8 @@ export declare class NewsService {
             createdAt: Date;
             updatedAt: Date;
             slug: string;
-            isActive: boolean;
             baseUrl: string;
+            isActive: boolean;
             config: Prisma.JsonValue;
             lastFetchedAt: Date | null;
             logoUrl: string | null;
@@ -132,21 +132,21 @@ export declare class NewsService {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        content: string;
+        imageUrl: string | null;
         slug: string;
+        categoryId: string | null;
+        content: string;
+        sourceId: string | null;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
-        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
-        categoryId: string | null;
-        sourceId: string | null;
     }>;
     create(data: Record<string, unknown>): Prisma.Prisma__NewsClient<{
         id: string;
@@ -154,21 +154,21 @@ export declare class NewsService {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        content: string;
+        imageUrl: string | null;
         slug: string;
+        categoryId: string | null;
+        content: string;
+        sourceId: string | null;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
-        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
-        categoryId: string | null;
-        sourceId: string | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, Prisma.PrismaClientOptions>;
     update(id: string, data: Record<string, unknown>): Prisma.Prisma__NewsClient<{
         id: string;
@@ -176,20 +176,20 @@ export declare class NewsService {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        content: string;
+        imageUrl: string | null;
         slug: string;
+        categoryId: string | null;
+        content: string;
+        sourceId: string | null;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
-        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
-        categoryId: string | null;
-        sourceId: string | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, Prisma.PrismaClientOptions>;
 }

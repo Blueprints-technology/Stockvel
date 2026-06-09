@@ -6,13 +6,13 @@ export declare class DashboardController {
         marketCap: number;
         ngxAsi: {
             symbol: string;
-            value: number;
             id: string;
             name: string;
             createdAt: Date;
             updatedAt: Date;
             percentChange: number;
             marketCap: number | null;
+            value: number;
             change: number;
             breadthAdvancers: number;
             breadthDecliners: number;
@@ -28,10 +28,10 @@ export declare class DashboardController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
+            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -51,13 +51,13 @@ export declare class DashboardController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            imageUrl: string | null;
             description: string | null;
             currentPrice: number;
             marketCap: number | null;
             trendScore: number;
             lastUpdatedAt: Date | null;
             coingeckoId: string;
+            imageUrl: string | null;
             change24h: number;
             volume24h: number | null;
             circulatingSupply: number | null;
@@ -66,10 +66,10 @@ export declare class DashboardController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
+            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -87,10 +87,10 @@ export declare class DashboardController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
+            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -110,8 +110,8 @@ export declare class DashboardController {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                slug: string;
                 description: string | null;
+                slug: string;
             } | null;
             sourceRef: {
                 id: string;
@@ -119,8 +119,8 @@ export declare class DashboardController {
                 createdAt: Date;
                 updatedAt: Date;
                 slug: string;
-                isActive: boolean;
                 baseUrl: string;
+                isActive: boolean;
                 config: import("@prisma/client/runtime/library").JsonValue;
                 lastFetchedAt: Date | null;
                 logoUrl: string | null;
@@ -132,21 +132,21 @@ export declare class DashboardController {
             updatedAt: Date;
             assetType: import(".prisma/client").$Enums.AssetType | null;
             assetSymbol: string | null;
-            content: string;
+            imageUrl: string | null;
             slug: string;
+            categoryId: string | null;
+            content: string;
+            sourceId: string | null;
             title: string;
             excerpt: string;
             source: string;
             sourceUrl: string;
             externalUrl: string | null;
             author: string | null;
-            imageUrl: string | null;
             categoryLabel: string | null;
             publishedAt: Date;
             isInsight: boolean;
             trendingScore: number;
-            categoryId: string | null;
-            sourceId: string | null;
         })[];
         featuredArticles: ({
             category: {
@@ -154,21 +154,21 @@ export declare class DashboardController {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                slug: string;
                 description: string | null;
+                slug: string;
             } | null;
         } & {
-            status: import(".prisma/client").$Enums.ArticleStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            content: string;
             slug: string;
+            categoryId: string | null;
+            content: string;
             title: string;
             excerpt: string;
             author: string;
             publishedAt: Date;
-            categoryId: string | null;
+            status: import(".prisma/client").$Enums.ArticleStatus;
             coverImage: string | null;
             authorAvatar: string | null;
             tags: string[];
@@ -177,16 +177,16 @@ export declare class DashboardController {
             viewCount: number;
         })[];
         latestResearch: {
-            type: import(".prisma/client").$Enums.ResearchReportType;
-            status: import(".prisma/client").$Enums.ResearchReportStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            content: string;
             slug: string;
+            content: string;
             title: string;
             author: string;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
             tags: string[];
+            type: import(".prisma/client").$Enums.ResearchReportType;
             summary: string;
             coverPage: string | null;
             pdfUrl: string | null;
@@ -204,8 +204,8 @@ export declare class DashboardController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
             icon: string | null;
             color: string | null;
         }[];
@@ -218,8 +218,8 @@ export declare class DashboardController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
         } | null;
         sourceRef: {
             id: string;
@@ -227,8 +227,8 @@ export declare class DashboardController {
             createdAt: Date;
             updatedAt: Date;
             slug: string;
-            isActive: boolean;
             baseUrl: string;
+            isActive: boolean;
             config: import("@prisma/client/runtime/library").JsonValue;
             lastFetchedAt: Date | null;
             logoUrl: string | null;
@@ -240,20 +240,20 @@ export declare class DashboardController {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        content: string;
+        imageUrl: string | null;
         slug: string;
+        categoryId: string | null;
+        content: string;
+        sourceId: string | null;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
-        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
-        categoryId: string | null;
-        sourceId: string | null;
     })[]>;
 }

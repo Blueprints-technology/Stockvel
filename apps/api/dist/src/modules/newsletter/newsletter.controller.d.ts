@@ -10,10 +10,10 @@ export declare class NewsletterController {
         message: string;
         subscriber: {
             id: string;
-            email: string;
             createdAt: Date;
             updatedAt: Date;
             isActive: boolean;
+            email: string;
             preferences: import("@prisma/client/runtime/library").JsonValue;
             subscribedAt: Date;
             unsubscribedAt: Date | null;
@@ -28,10 +28,10 @@ export declare class NewsletterController {
         message: string;
         subscriber: {
             id: string;
-            email: string;
             createdAt: Date;
             updatedAt: Date;
             isActive: boolean;
+            email: string;
             preferences: import("@prisma/client/runtime/library").JsonValue;
             subscribedAt: Date;
             unsubscribedAt: Date | null;
@@ -39,20 +39,20 @@ export declare class NewsletterController {
     }>;
     subscribers(): import(".prisma/client").Prisma.PrismaPromise<{
         id: string;
-        email: string;
         createdAt: Date;
         updatedAt: Date;
         isActive: boolean;
+        email: string;
         preferences: import("@prisma/client/runtime/library").JsonValue;
         subscribedAt: Date;
         unsubscribedAt: Date | null;
     }[]>;
     draft(body: CreateNewsletterDto): import(".prisma/client").Prisma.Prisma__NewsletterClient<{
-        status: import(".prisma/client").$Enums.NewsletterStatus;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         content: string;
+        status: import(".prisma/client").$Enums.NewsletterStatus;
         subject: string;
         sentAt: Date | null;
         scheduledFor: Date | null;
@@ -60,11 +60,11 @@ export declare class NewsletterController {
         openCount: number;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, import(".prisma/client").Prisma.PrismaClientOptions>;
     send(body: CreateNewsletterDto): Promise<{
-        status: import(".prisma/client").$Enums.NewsletterStatus;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         content: string;
+        status: import(".prisma/client").$Enums.NewsletterStatus;
         subject: string;
         sentAt: Date | null;
         scheduledFor: Date | null;
