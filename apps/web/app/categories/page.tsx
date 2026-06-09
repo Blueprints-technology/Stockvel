@@ -1,7 +1,5 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight, Layers3, TrendingUp } from "lucide-react";

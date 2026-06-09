@@ -86,6 +86,19 @@ const config: Config = {
         caption: ["0.75rem", { lineHeight: "1.5" }],
         data: ["0.875rem", { lineHeight: "1.5" }],
       },
+      keyframes: {
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(18px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        ticker: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        ticker: "ticker 28s linear infinite",
+      },
     },
   },
   plugins: [],
