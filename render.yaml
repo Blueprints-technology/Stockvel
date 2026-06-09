@@ -1,12 +1,15 @@
 services:
   - type: web
     name: fmp-api
-    env: docker
+    env: node
     plan: starter
-    dockerContext: .
-    dockerfilePath: ./apps/api/docker/Dockerfile
+    rootDir: apps/api
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npx prisma migrate deploy && node dist/main.js
     envVars:
       - key: DATABASE_URL
+        sync: false
+      - key: DIRECT_URL
         sync: false
       - key: REDIS_URL
         sync: false
@@ -14,19 +17,32 @@ services:
         sync: false
       - key: JWT_REFRESH_SECRET
         sync: false
+      - key: JWT_ACCESS_TTL
+        value: 15m
+      - key: JWT_REFRESH_TTL
+        value: 7d
+      - key: COOKIE_SECRET
+        sync: false
+      - key: CSRF_SECRET
+        sync: false
       - key: FRONTEND_URL
         sync: false
+      - key: PORT
+        value: 4000
       - key: NODE_ENV
         value: production
 
   - type: web
     name: fmp-web
-    env: docker
+    env: node
     plan: starter
-    dockerContext: ./apps/web
-    dockerfilePath: ./apps/web/Dockerfile
+    rootDir: apps/web
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
     envVars:
       - key: NEXT_PUBLIC_API_URL
         sync: false
       - key: NEXT_PUBLIC_SOCKET_URL
         sync: false
+      - key: NODE_ENV
+        value: production
