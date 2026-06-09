@@ -54,7 +54,9 @@ export default function HomePage() {
   const queryClient = useQueryClient();
   const { data } = useQuery({ queryKey: ["overview"], queryFn: fetchOverview });
   const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") ?? "");
+  const [searchQuery, setSearchQuery] = useState(
+    () => searchParams?.get("q") ?? "",
+  );
 
   useSocket("market:overview", () =>
     queryClient.invalidateQueries({ queryKey: ["overview"] }),
