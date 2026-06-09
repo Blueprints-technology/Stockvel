@@ -1,4 +1,3 @@
-// @/components/market/instant-search.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -18,7 +17,6 @@ import { useRecentSearches } from "@/hooks/use-recent-searches";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
-// ✅ Accept optional controlled props
 interface InstantSearchProps {
   externalQuery?: string;
   onQueryChange?: (value: string) => void;
@@ -37,17 +35,16 @@ export function InstantSearch({
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // ✅ Use external query if provided, else manage internally
   const [internalQuery, setInternalQuery] = useState(
-    () => searchParams.get("q") ?? "",
+    () => searchParams?.get("q") ?? "",
   );
 
   const query = externalQuery !== undefined ? externalQuery : internalQuery;
   const setQuery = (value: string) => {
     if (onQueryChange) {
-      onQueryChange(value); // ✅ Controlled mode
+      onQueryChange(value);
     } else {
-      setInternalQuery(value); // ✅ Uncontrolled mode
+      setInternalQuery(value);
       // Sync to URL when uncontrolled
       if (value.trim()) {
         router.replace(`/search?q=${encodeURIComponent(value)}`, {
