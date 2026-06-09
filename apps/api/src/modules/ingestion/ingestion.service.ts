@@ -181,7 +181,6 @@ export class IngestionService {
       for (const market of markets) {
         const symbol = String(market.symbol).toUpperCase();
 
-        // ✅ Sanitize crypto numeric fields too
         const currentPrice = toFinite(market.current_price);
         const marketCapVal = toFinite(market.market_cap);
         const change24h = toFinite(market.price_change_percentage_24h);
