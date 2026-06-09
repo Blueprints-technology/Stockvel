@@ -1,0 +1,114 @@
+import { SearchService } from './search.service';
+export declare class SearchController {
+    private readonly searchService;
+    constructor(searchService: SearchService);
+    search(q: string): Promise<{
+        stocks: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            description: string | null;
+            ticker: string;
+            companyName: string;
+            sector: string;
+            currentPrice: number;
+            dailyChange: number;
+            percentChange: number;
+            marketCap: number | null;
+            eps: number | null;
+            peRatio: number | null;
+            dividendYield: number | null;
+            volume: number | null;
+            week52High: number | null;
+            week52Low: number | null;
+            trendScore: number;
+            lastUpdatedAt: Date | null;
+        }[];
+        crypto: {
+            symbol: string;
+            id: string;
+            name: string;
+            createdAt: Date;
+            updatedAt: Date;
+            imageUrl: string | null;
+            description: string | null;
+            currentPrice: number;
+            marketCap: number | null;
+            trendScore: number;
+            lastUpdatedAt: Date | null;
+            coingeckoId: string;
+            change24h: number;
+            volume24h: number | null;
+            circulatingSupply: number | null;
+        }[];
+        news: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            assetType: import(".prisma/client").$Enums.AssetType | null;
+            assetSymbol: string | null;
+            content: string;
+            slug: string;
+            title: string;
+            excerpt: string;
+            source: string;
+            sourceUrl: string;
+            externalUrl: string | null;
+            author: string | null;
+            imageUrl: string | null;
+            categoryLabel: string | null;
+            publishedAt: Date;
+            isInsight: boolean;
+            trendingScore: number;
+            categoryId: string | null;
+            sourceId: string | null;
+        }[];
+        articles: ({
+            category: {
+                id: string;
+                name: string;
+                createdAt: Date;
+                updatedAt: Date;
+                slug: string;
+                description: string | null;
+            } | null;
+        } & {
+            status: import(".prisma/client").$Enums.ArticleStatus;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            content: string;
+            slug: string;
+            title: string;
+            excerpt: string;
+            author: string;
+            publishedAt: Date;
+            categoryId: string | null;
+            coverImage: string | null;
+            authorAvatar: string | null;
+            tags: string[];
+            isFeatured: boolean;
+            readTime: number;
+            viewCount: number;
+        })[];
+        research: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            content: string;
+            slug: string;
+            title: string;
+            author: string;
+            tags: string[];
+            summary: string;
+            coverPage: string | null;
+            pdfUrl: string | null;
+            reportYear: number;
+            reportDate: Date;
+            downloadCount: number;
+            isPremium: boolean;
+        }[];
+    }>;
+}

@@ -1,0 +1,225 @@
+import { Prisma } from '@prisma/client';
+import { PrismaService } from '../../prisma/prisma.service';
+import { QueryReportsDto } from './dto/query-reports.dto';
+export declare class ResearchService {
+    private readonly prisma;
+    constructor(prisma: PrismaService);
+    reports(query: QueryReportsDto): Promise<{
+        items: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            content: string;
+            slug: string;
+            title: string;
+            author: string;
+            tags: string[];
+            summary: string;
+            coverPage: string | null;
+            pdfUrl: string | null;
+            reportYear: number;
+            reportDate: Date;
+            downloadCount: number;
+            isPremium: boolean;
+        }[];
+        years: number[];
+        latest: ({
+            kind: "report";
+            date: Date;
+            item: {
+                type: import(".prisma/client").$Enums.ResearchReportType;
+                status: import(".prisma/client").$Enums.ResearchReportStatus;
+                id: string;
+                createdAt: Date;
+                updatedAt: Date;
+                content: string;
+                slug: string;
+                title: string;
+                author: string;
+                tags: string[];
+                summary: string;
+                coverPage: string | null;
+                pdfUrl: string | null;
+                reportYear: number;
+                reportDate: Date;
+                downloadCount: number;
+                isPremium: boolean;
+            };
+        } | {
+            kind: "podcast";
+            date: Date;
+            item: {
+                id: string;
+                createdAt: Date;
+                updatedAt: Date;
+                slug: string;
+                title: string;
+                publishedAt: Date;
+                description: string;
+                coverImage: string | null;
+                tags: string[];
+                audioUrl: string;
+                duration: number;
+                episodeNumber: number;
+                seasonNumber: number;
+                playCount: number;
+            };
+        })[];
+        analysis: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            content: string;
+            slug: string;
+            title: string;
+            author: string;
+            tags: string[];
+            summary: string;
+            coverPage: string | null;
+            pdfUrl: string | null;
+            reportYear: number;
+            reportDate: Date;
+            downloadCount: number;
+            isPremium: boolean;
+        }[];
+        marketCoverage: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            content: string;
+            slug: string;
+            title: string;
+            author: string;
+            tags: string[];
+            summary: string;
+            coverPage: string | null;
+            pdfUrl: string | null;
+            reportYear: number;
+            reportDate: Date;
+            downloadCount: number;
+            isPremium: boolean;
+        }[];
+        pagination: {
+            total: number;
+            page: number;
+            limit: number;
+            totalPages: number;
+        };
+    }>;
+    report(slug: string): Promise<{
+        type: import(".prisma/client").$Enums.ResearchReportType;
+        status: import(".prisma/client").$Enums.ResearchReportStatus;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        content: string;
+        slug: string;
+        title: string;
+        author: string;
+        tags: string[];
+        summary: string;
+        coverPage: string | null;
+        pdfUrl: string | null;
+        reportYear: number;
+        reportDate: Date;
+        downloadCount: number;
+        isPremium: boolean;
+    }>;
+    podcasts(): Prisma.PrismaPromise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        slug: string;
+        title: string;
+        publishedAt: Date;
+        description: string;
+        coverImage: string | null;
+        tags: string[];
+        audioUrl: string;
+        duration: number;
+        episodeNumber: number;
+        seasonNumber: number;
+        playCount: number;
+    }[]>;
+    podcast(slug: string): Promise<{
+        playCount: number;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        slug: string;
+        title: string;
+        publishedAt: Date;
+        description: string;
+        coverImage: string | null;
+        tags: string[];
+        audioUrl: string;
+        duration: number;
+        episodeNumber: number;
+        seasonNumber: number;
+    }>;
+    treasuries(): Promise<{
+        tenor: string;
+        latestRate: number;
+        previousRate: number;
+        direction: number;
+        updatedAt: Date;
+        source: string;
+        series: {
+            date: string;
+            rate: number;
+            source: string;
+        }[];
+    }[]>;
+    trackDownload(slug: string): Promise<{
+        slug: string;
+        downloadCount: number;
+    }>;
+    latest(): Promise<({
+        kind: "report";
+        date: Date;
+        item: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            content: string;
+            slug: string;
+            title: string;
+            author: string;
+            tags: string[];
+            summary: string;
+            coverPage: string | null;
+            pdfUrl: string | null;
+            reportYear: number;
+            reportDate: Date;
+            downloadCount: number;
+            isPremium: boolean;
+        };
+    } | {
+        kind: "podcast";
+        date: Date;
+        item: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            slug: string;
+            title: string;
+            publishedAt: Date;
+            description: string;
+            coverImage: string | null;
+            tags: string[];
+            audioUrl: string;
+            duration: number;
+            episodeNumber: number;
+            seasonNumber: number;
+            playCount: number;
+        };
+    })[]>;
+}
