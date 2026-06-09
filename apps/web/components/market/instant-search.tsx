@@ -1,7 +1,8 @@
+// @/components/market/instant-search.tsx
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   Search,
   Loader2,
@@ -15,6 +16,13 @@ import { searchEverything } from "@/services/market";
 import { useDebouncedValue } from "@/hooks/use-debounced-value";
 import { useRecentSearches } from "@/hooks/use-recent-searches";
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
+
+// ✅ Accept optional controlled props
+interface InstantSearchProps {
+  externalQuery?: string;
+  onQueryChange?: (value: string) => void;
+}
 
 const SECTIONS = [
   { key: "stocks", label: "Stocks", icon: TrendingUp },
@@ -22,8 +30,35 @@ const SECTIONS = [
   { key: "news", label: "News", icon: Newspaper },
 ] as const;
 
-export function InstantSearch() {
-  const [query, setQuery] = useState("");
+export function InstantSearch({
+  externalQuery,
+  onQueryChange,
+}: InstantSearchProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // ✅ Use external query if provided, else manage internally
+  const [internalQuery, setInternalQuery] = useState(
+    () => searchParams.get("q") ?? "",
+  );
+
+  const query = externalQuery !== undefined ? externalQuery : internalQuery;
+  const setQuery = (value: string) => {
+    if (onQueryChange) {
+      onQueryChange(value); // ✅ Controlled mode
+    } else {
+      setInternalQuery(value); // ✅ Uncontrolled mode
+      // Sync to URL when uncontrolled
+      if (value.trim()) {
+        router.replace(`/search?q=${encodeURIComponent(value)}`, {
+          scroll: false,
+        });
+      } else {
+        router.replace(`/`, { scroll: false });
+      }
+    }
+  };
+
   const debounced = useDebouncedValue(query, 250);
   const { addItem, items } = useRecentSearches();
 
@@ -137,7 +172,11 @@ export function InstantSearch() {
                       <Link
                         key={item.id ?? item.slug ?? item.symbol}
                         href={href}
-                        onClick={() => addItem(query)}
+                        onClick={() => {
+                          addItem(query);
+                          // Optional: clear query after selection
+                          // setQuery("");
+                        }}
                         className="group flex flex-col rounded-xl bg-white px-3 py-2 text-slate-700 shadow-sm transition hover:bg-blue-50 hover:text-brand hover:shadow-md"
                       >
                         <span className="truncate font-medium">{title}</span>

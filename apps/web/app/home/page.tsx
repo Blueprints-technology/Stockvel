@@ -1,3 +1,4 @@
+// app/home/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -93,8 +94,8 @@ export default function HomePage() {
 
         <AnimatedBlock>
           <InstantSearch
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
+            externalQuery={searchQuery}
+            onQueryChange={setSearchQuery}
           />
         </AnimatedBlock>
 
@@ -135,7 +136,6 @@ export default function HomePage() {
                 const Icon = item.icon;
                 return (
                   <Link key={item.href} href={item.href}>
-                    {/* ✨ Wrap in AnimatedCard */}
                     <AnimatedCard className="h-full">
                       <Card className="h-full space-y-4">
                         <div className="inline-flex rounded-2xl bg-blue-50 p-3 text-brand">

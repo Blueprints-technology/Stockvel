@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// 🚀 MINIMAL V1: Protected routes removed from navigation
 const navItems = [
   { href: "/home", label: "Overview", icon: LayoutDashboard },
   { href: "/stocks", label: "Stocks", icon: Activity },
