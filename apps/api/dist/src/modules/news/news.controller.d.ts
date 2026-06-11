@@ -9,8 +9,8 @@ export declare class NewsController {
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             slug: string;
+            description: string | null;
         } | null;
         sourceRef: {
             id: string;
@@ -18,8 +18,8 @@ export declare class NewsController {
             createdAt: Date;
             updatedAt: Date;
             slug: string;
-            baseUrl: string;
             isActive: boolean;
+            baseUrl: string;
             config: import("@prisma/client/runtime/library").JsonValue;
             lastFetchedAt: Date | null;
             logoUrl: string | null;
@@ -31,21 +31,21 @@ export declare class NewsController {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        imageUrl: string | null;
-        slug: string;
-        categoryId: string | null;
         content: string;
-        sourceId: string | null;
+        slug: string;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
+        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
+        categoryId: string | null;
+        sourceId: string | null;
     })[]>;
     sources(): import(".prisma/client").Prisma.PrismaPromise<{
         id: string;
@@ -53,8 +53,8 @@ export declare class NewsController {
         createdAt: Date;
         updatedAt: Date;
         slug: string;
-        baseUrl: string;
         isActive: boolean;
+        baseUrl: string;
         config: import("@prisma/client/runtime/library").JsonValue;
         lastFetchedAt: Date | null;
         logoUrl: string | null;
@@ -67,8 +67,8 @@ export declare class NewsController {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                description: string | null;
                 slug: string;
+                description: string | null;
             } | null;
             sourceRef: {
                 id: string;
@@ -76,8 +76,8 @@ export declare class NewsController {
                 createdAt: Date;
                 updatedAt: Date;
                 slug: string;
-                baseUrl: string;
                 isActive: boolean;
+                baseUrl: string;
                 config: import("@prisma/client/runtime/library").JsonValue;
                 lastFetchedAt: Date | null;
                 logoUrl: string | null;
@@ -89,29 +89,29 @@ export declare class NewsController {
             updatedAt: Date;
             assetType: import(".prisma/client").$Enums.AssetType | null;
             assetSymbol: string | null;
-            imageUrl: string | null;
-            slug: string;
-            categoryId: string | null;
             content: string;
-            sourceId: string | null;
+            slug: string;
             title: string;
             excerpt: string;
             source: string;
             sourceUrl: string;
             externalUrl: string | null;
             author: string | null;
+            imageUrl: string | null;
             categoryLabel: string | null;
             publishedAt: Date;
             isInsight: boolean;
             trendingScore: number;
+            categoryId: string | null;
+            sourceId: string | null;
         })[];
         category: {
             id: string;
             name: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string | null;
             slug: string;
+            description: string | null;
         } | null;
         sourceRef: {
             id: string;
@@ -119,8 +119,8 @@ export declare class NewsController {
             createdAt: Date;
             updatedAt: Date;
             slug: string;
-            baseUrl: string;
             isActive: boolean;
+            baseUrl: string;
             config: import("@prisma/client/runtime/library").JsonValue;
             lastFetchedAt: Date | null;
             logoUrl: string | null;
@@ -131,21 +131,21 @@ export declare class NewsController {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        imageUrl: string | null;
-        slug: string;
-        categoryId: string | null;
         content: string;
-        sourceId: string | null;
+        slug: string;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
+        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
+        categoryId: string | null;
+        sourceId: string | null;
     }>;
     create(body: Record<string, unknown>): import(".prisma/client").Prisma.Prisma__NewsClient<{
         id: string;
@@ -153,21 +153,21 @@ export declare class NewsController {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        imageUrl: string | null;
-        slug: string;
-        categoryId: string | null;
         content: string;
-        sourceId: string | null;
+        slug: string;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
+        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
+        categoryId: string | null;
+        sourceId: string | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, import(".prisma/client").Prisma.PrismaClientOptions>;
     update(id: string, body: Record<string, unknown>): import(".prisma/client").Prisma.Prisma__NewsClient<{
         id: string;
@@ -175,20 +175,20 @@ export declare class NewsController {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        imageUrl: string | null;
-        slug: string;
-        categoryId: string | null;
         content: string;
-        sourceId: string | null;
+        slug: string;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
+        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
+        categoryId: string | null;
+        sourceId: string | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, import(".prisma/client").Prisma.PrismaClientOptions>;
 }

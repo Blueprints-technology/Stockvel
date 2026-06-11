@@ -14,9 +14,9 @@ export declare class PortfolioController {
             dailyChangePct: number;
             allocationBase: number;
             id: string;
-            userId: string;
             createdAt: Date;
             updatedAt: Date;
+            userId: string;
             assetType: import(".prisma/client").$Enums.AssetType;
             assetSymbol: string;
             quantity: number;
@@ -32,9 +32,9 @@ export declare class PortfolioController {
     }>;
     addAsset(user: AuthenticatedUser, dto: UpsertPortfolioAssetDto): import(".prisma/client").Prisma.Prisma__PortfolioAssetClient<{
         id: string;
-        userId: string;
         createdAt: Date;
         updatedAt: Date;
+        userId: string;
         assetType: import(".prisma/client").$Enums.AssetType;
         assetSymbol: string;
         quantity: number;

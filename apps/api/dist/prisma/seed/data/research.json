@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Nigerian Banking Sector Outlook 2026",
+        "slug": "nigerian-banking-sector-outlook-2026",
+        "type": "MARKET_COVERAGE",
+        "summary": "A concise review of capital, margins, liquidity, and valuation for major listed banks.",
+        "content": "The banking sector remains central to liquidity transmission in Nigeria. Key watchpoints include FX normalization, capital adequacy, and funding cost discipline.",
+        "reportYear": 2026,
+        "author": "Stockvel Research Desk",
+        "tags": ["banking", "ngx", "outlook"],
+        "downloadCount": 114,
+        "isPremium": false
+    },
+    {
+        "title": "Crypto Liquidity and Stablecoin Flows in Africa",
+        "slug": "crypto-liquidity-and-stablecoin-flows-in-africa",
+        "type": "ANALYSIS",
+        "summary": "An overview of how stablecoins, on-ramps, and exchange access shape market structure.",
+        "content": "Stablecoins continue to play an important role in cross-border value transfer, liquidity buffering, and informal treasury management.",
+        "reportYear": 2026,
+        "author": "Stockvel Research Desk",
+        "tags": ["crypto", "stablecoins", "africa"],
+        "downloadCount": 92,
+        "isPremium": false
+    },
+    {
+        "title": "Treasury Bill Laddering for Income Stability",
+        "slug": "treasury-bill-laddering-for-income-stability",
+        "type": "STRATEGY",
+        "summary": "How investors can stagger fixed income duration to improve flexibility and reinvestment timing.",
+        "content": "A laddering strategy can reduce reinvestment concentration and allow investors to respond to changing yield conditions with more flexibility.",
+        "reportYear": 2026,
+        "author": "Stockvel Research Desk",
+        "tags": ["treasury-bills", "strategy", "income"],
+        "downloadCount": 67,
+        "isPremium": false
+    }
+]

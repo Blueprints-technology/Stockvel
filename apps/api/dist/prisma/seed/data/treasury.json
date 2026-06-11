@@ -1,0 +1,5 @@
+[
+    { "tenor": "91D", "rate": "18.2500", "source": "CBN Demo Feed" },
+    { "tenor": "182D", "rate": "19.4000", "source": "CBN Demo Feed" },
+    { "tenor": "364D", "rate": "21.0500", "source": "CBN Demo Feed" }
+]

@@ -6,16 +6,16 @@ export declare class ResearchService {
     constructor(prisma: PrismaService);
     reports(query: QueryReportsDto): Promise<{
         items: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             content: string;
+            slug: string;
             title: string;
             author: string;
-            status: import(".prisma/client").$Enums.ResearchReportStatus;
             tags: string[];
-            type: import(".prisma/client").$Enums.ResearchReportType;
             summary: string;
             coverPage: string | null;
             pdfUrl: string | null;
@@ -29,16 +29,16 @@ export declare class ResearchService {
             kind: "report";
             date: Date;
             item: {
+                type: import(".prisma/client").$Enums.ResearchReportType;
+                status: import(".prisma/client").$Enums.ResearchReportStatus;
                 id: string;
                 createdAt: Date;
                 updatedAt: Date;
-                slug: string;
                 content: string;
+                slug: string;
                 title: string;
                 author: string;
-                status: import(".prisma/client").$Enums.ResearchReportStatus;
                 tags: string[];
-                type: import(".prisma/client").$Enums.ResearchReportType;
                 summary: string;
                 coverPage: string | null;
                 pdfUrl: string | null;
@@ -54,10 +54,10 @@ export declare class ResearchService {
                 id: string;
                 createdAt: Date;
                 updatedAt: Date;
-                description: string;
                 slug: string;
                 title: string;
                 publishedAt: Date;
+                description: string;
                 coverImage: string | null;
                 tags: string[];
                 audioUrl: string;
@@ -68,16 +68,16 @@ export declare class ResearchService {
             };
         })[];
         analysis: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             content: string;
+            slug: string;
             title: string;
             author: string;
-            status: import(".prisma/client").$Enums.ResearchReportStatus;
             tags: string[];
-            type: import(".prisma/client").$Enums.ResearchReportType;
             summary: string;
             coverPage: string | null;
             pdfUrl: string | null;
@@ -87,16 +87,16 @@ export declare class ResearchService {
             isPremium: boolean;
         }[];
         marketCoverage: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             content: string;
+            slug: string;
             title: string;
             author: string;
-            status: import(".prisma/client").$Enums.ResearchReportStatus;
             tags: string[];
-            type: import(".prisma/client").$Enums.ResearchReportType;
             summary: string;
             coverPage: string | null;
             pdfUrl: string | null;
@@ -113,16 +113,16 @@ export declare class ResearchService {
         };
     }>;
     report(slug: string): Promise<{
+        type: import(".prisma/client").$Enums.ResearchReportType;
+        status: import(".prisma/client").$Enums.ResearchReportStatus;
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         content: string;
+        slug: string;
         title: string;
         author: string;
-        status: import(".prisma/client").$Enums.ResearchReportStatus;
         tags: string[];
-        type: import(".prisma/client").$Enums.ResearchReportType;
         summary: string;
         coverPage: string | null;
         pdfUrl: string | null;
@@ -135,10 +135,10 @@ export declare class ResearchService {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        description: string;
         slug: string;
         title: string;
         publishedAt: Date;
+        description: string;
         coverImage: string | null;
         tags: string[];
         audioUrl: string;
@@ -152,10 +152,10 @@ export declare class ResearchService {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        description: string;
         slug: string;
         title: string;
         publishedAt: Date;
+        description: string;
         coverImage: string | null;
         tags: string[];
         audioUrl: string;
@@ -184,16 +184,16 @@ export declare class ResearchService {
         kind: "report";
         date: Date;
         item: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             content: string;
+            slug: string;
             title: string;
             author: string;
-            status: import(".prisma/client").$Enums.ResearchReportStatus;
             tags: string[];
-            type: import(".prisma/client").$Enums.ResearchReportType;
             summary: string;
             coverPage: string | null;
             pdfUrl: string | null;
@@ -209,10 +209,10 @@ export declare class ResearchService {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            description: string;
             slug: string;
             title: string;
             publishedAt: Date;
+            description: string;
             coverImage: string | null;
             tags: string[];
             audioUrl: string;

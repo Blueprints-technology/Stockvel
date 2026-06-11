@@ -1,0 +1,46 @@
+[
+    {
+        "title": "How dividend investing works on the NGX",
+        "slug": "how-dividend-investing-works-on-the-ngx",
+        "excerpt": "A plain-English guide to dividend dates, yield traps, and total return thinking.",
+        "content": "Dividend investing on the NGX can be rewarding, but investors need to distinguish cash return from real total return. Focus on earnings resilience, board consistency, and payout sustainability.",
+        "author": "Stockvel Research Desk",
+        "categorySlug": "ngx-playbook",
+        "tags": ["dividends", "ngx", "equities"],
+        "isFeatured": true,
+        "readTime": 6
+    },
+    {
+        "title": "Understanding support and resistance without hype",
+        "slug": "understanding-support-and-resistance-without-hype",
+        "excerpt": "A practical introduction to technical levels and how not to overfit them.",
+        "content": "Support and resistance are useful because market participants cluster around visible levels. Use them with context, not as magic lines.",
+        "author": "Stockvel Research Desk",
+        "categorySlug": "investing-basics",
+        "tags": ["technical-analysis", "trading"],
+        "isFeatured": false,
+        "readTime": 7
+    },
+    {
+        "title": "What every Nigerian investor should know about treasury bills",
+        "slug": "what-every-nigerian-investor-should-know-about-treasury-bills",
+        "excerpt": "Why treasury bills matter for capital preservation, yield comparison, and portfolio ballast.",
+        "content": "Treasury bills can serve as a portfolio anchor when risk appetite falls. Compare real yields, tenor risk, and reinvestment assumptions.",
+        "author": "Stockvel Research Desk",
+        "categorySlug": "personal-finance",
+        "tags": ["treasury-bills", "fixed-income", "naira"],
+        "isFeatured": true,
+        "readTime": 5
+    },
+    {
+        "title": "Stablecoins for beginners: settlement, safety, and pitfalls",
+        "slug": "stablecoins-for-beginners-settlement-safety-and-pitfalls",
+        "excerpt": "How stablecoins are used, and where counterparty and depeg risks can appear.",
+        "content": "Stablecoins improve transfer speed and access, but users should still understand custody, collateral, and platform concentration risks.",
+        "author": "Stockvel Research Desk",
+        "categorySlug": "crypto-education",
+        "tags": ["stablecoins", "crypto", "risk"],
+        "isFeatured": false,
+        "readTime": 8
+    }
+]

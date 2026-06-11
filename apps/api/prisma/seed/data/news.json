@@ -1,0 +1,62 @@
+[
+  {
+    "categorySlug": "equities",
+    "sourceSlug": "nairametrics",
+    "slug": "nigeria-ftse-russell-return-foreign-inflows",
+    "title": "Nigeria's FTSE Russell return could trigger fresh foreign inflows",
+    "excerpt": "Analysts expect improved visibility for Nigerian equities after the market re-enters key benchmark conversations.",
+    "content": "Nigeria's re-entry into global index discussions is expected to improve discoverability, liquidity, and foreign participation across the Nigerian Exchange.",
+    "source": "Nairametrics",
+    "sourceUrl": "https://nairametrics.com/2026/05/30/ftse-russell-return-demo",
+    "assetType": "STOCK",
+    "assetSymbol": "NGXASI",
+    "isInsight": true,
+    "trendingScore": 82,
+    "categoryLabel": "Equities"
+  },
+  {
+    "categorySlug": "crypto",
+    "sourceSlug": "coingecko",
+    "slug": "bitcoin-strengthens-above-100k",
+    "title": "Bitcoin strengthens above $100k as institutional appetite returns",
+    "excerpt": "Crypto market breadth broadens with Bitcoin dominance stabilizing and altcoins gaining momentum.",
+    "content": "Bitcoin sustained momentum above the six-figure mark, while Ethereum and Solana also posted healthy gains.",
+    "source": "CoinGecko",
+    "sourceUrl": "https://www.coingecko.com/en/news/demo-bitcoin-strength",
+    "assetType": "CRYPTO",
+    "assetSymbol": "BTC",
+    "isInsight": true,
+    "trendingScore": 90,
+    "categoryLabel": "Crypto"
+  },
+  {
+    "categorySlug": "education",
+    "sourceSlug": "techcabal",
+    "slug": "how-to-build-a-balanced-ngn-crypto-portfolio",
+    "title": "How to build a balanced NGN and crypto portfolio",
+    "excerpt": "A beginner-friendly breakdown of diversification, position sizing, and risk management.",
+    "content": "Investors can blend stable Nigerian dividend stocks with carefully selected crypto assets to create a diversified, multi-asset portfolio.",
+    "source": "Financial Market Platform",
+    "sourceUrl": "https://example.com/education/balanced-portfolio",
+    "assetType": null,
+    "assetSymbol": null,
+    "isInsight": true,
+    "trendingScore": 78,
+    "categoryLabel": "Education"
+  },
+  {
+    "categorySlug": "economy",
+    "sourceSlug": "businessday",
+    "slug": "treasury-bill-yields-hold-above-20-percent",
+    "title": "Treasury bill yields hold above 20% as liquidity stays selective",
+    "excerpt": "Short-dated instruments remain attractive to conservative allocators watching inflation and naira volatility.",
+    "content": "Treasury yields remain compelling for local investors who want lower volatility instruments while preserving flexibility around duration.",
+    "source": "BusinessDay",
+    "sourceUrl": "https://businessday.ng/markets/demo-treasury-yields",
+    "assetType": null,
+    "assetSymbol": null,
+    "isInsight": false,
+    "trendingScore": 70,
+    "categoryLabel": "Economy"
+  }
+]

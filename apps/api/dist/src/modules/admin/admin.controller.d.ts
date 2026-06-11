@@ -15,9 +15,9 @@ export declare class AdminController {
             providers: number;
         };
         jobs: {
-            id: string;
-            status: string;
             message: string | null;
+            status: string;
+            id: string;
             jobName: string;
             startedAt: Date;
             completedAt: Date | null;
@@ -27,9 +27,9 @@ export declare class AdminController {
     users(): import(".prisma/client").Prisma.PrismaPromise<({
         profile: {
             id: string;
-            userId: string;
             createdAt: Date;
             updatedAt: Date;
+            userId: string;
             displayName: string;
             username: string;
             avatarUrl: string | null;
@@ -37,20 +37,20 @@ export declare class AdminController {
         } | null;
     } & {
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         email: string;
         passwordHash: string;
         role: import(".prisma/client").$Enums.Role;
         isEmailVerified: boolean;
+        createdAt: Date;
+        updatedAt: Date;
     })[]>;
     comments(moderated?: string): import(".prisma/client").Prisma.PrismaPromise<({
         user: {
             profile: {
                 id: string;
-                userId: string;
                 createdAt: Date;
                 updatedAt: Date;
+                userId: string;
                 displayName: string;
                 username: string;
                 avatarUrl: string | null;
@@ -58,18 +58,18 @@ export declare class AdminController {
             } | null;
         } & {
             id: string;
-            createdAt: Date;
-            updatedAt: Date;
             email: string;
             passwordHash: string;
             role: import(".prisma/client").$Enums.Role;
             isEmailVerified: boolean;
+            createdAt: Date;
+            updatedAt: Date;
         };
         replies: {
             id: string;
-            userId: string;
             createdAt: Date;
             updatedAt: Date;
+            userId: string;
             content: string;
             upvotes: number;
             isModerated: boolean;
@@ -77,9 +77,9 @@ export declare class AdminController {
         }[];
     } & {
         id: string;
-        userId: string;
         createdAt: Date;
         updatedAt: Date;
+        userId: string;
         assetType: import(".prisma/client").$Enums.AssetType;
         assetSymbol: string;
         content: string;
@@ -87,11 +87,11 @@ export declare class AdminController {
         isModerated: boolean;
     })[]>;
     newsletters(): import(".prisma/client").Prisma.PrismaPromise<{
+        status: import(".prisma/client").$Enums.NewsletterStatus;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         content: string;
-        status: import(".prisma/client").$Enums.NewsletterStatus;
         subject: string;
         sentAt: Date | null;
         scheduledFor: Date | null;
@@ -100,20 +100,20 @@ export declare class AdminController {
     }[]>;
     subscribers(): import(".prisma/client").Prisma.PrismaPromise<{
         id: string;
+        email: string;
         createdAt: Date;
         updatedAt: Date;
         isActive: boolean;
-        email: string;
         preferences: import("@prisma/client/runtime/library").JsonValue;
         subscribedAt: Date;
         unsubscribedAt: Date | null;
     }[]>;
     providerStatus(): import(".prisma/client").Prisma.PrismaPromise<({
         statusLogs: {
+            status: import(".prisma/client").$Enums.ProviderHealthStatus;
             id: string;
             createdAt: Date;
             providerId: string;
-            status: import(".prisma/client").$Enums.ProviderHealthStatus;
             responseTimeMs: number;
             errorMessage: string | null;
         }[];
@@ -123,9 +123,9 @@ export declare class AdminController {
         createdAt: Date;
         updatedAt: Date;
         slug: string;
+        isActive: boolean;
         baseUrl: string;
         apiKey: string | null;
-        isActive: boolean;
         priority: number;
         rateLimitPerMin: number;
         config: import("@prisma/client/runtime/library").JsonValue;
@@ -136,9 +136,9 @@ export declare class AdminController {
         isModerated: boolean;
     }): import(".prisma/client").Prisma.Prisma__CommentClient<{
         id: string;
-        userId: string;
         createdAt: Date;
         updatedAt: Date;
+        userId: string;
         assetType: import(".prisma/client").$Enums.AssetType;
         assetSymbol: string;
         content: string;
@@ -151,20 +151,20 @@ export declare class AdminController {
         updatedAt: Date;
         assetType: import(".prisma/client").$Enums.AssetType | null;
         assetSymbol: string | null;
-        imageUrl: string | null;
-        slug: string;
-        categoryId: string | null;
         content: string;
-        sourceId: string | null;
+        slug: string;
         title: string;
         excerpt: string;
         source: string;
         sourceUrl: string;
         externalUrl: string | null;
         author: string | null;
+        imageUrl: string | null;
         categoryLabel: string | null;
         publishedAt: Date;
         isInsight: boolean;
         trendingScore: number;
+        categoryId: string | null;
+        sourceId: string | null;
     }, never, import("@prisma/client/runtime/library").DefaultArgs, import(".prisma/client").Prisma.PrismaClientOptions>;
 }

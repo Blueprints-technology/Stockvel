@@ -15,13 +15,11 @@ const prisma_service_1 = require("./prisma/prisma.service");
 (0, node_dns_1.setDefaultResultOrder)("ipv4first");
 async function bootstrap() {
     console.log("=== BOOTSTRAP START ===");
-    console.log("PORT env:", process.env.PORT);
+    console.log("Raw process.env.PORT:", process.env.PORT);
     console.log("NODE_ENV:", process.env.NODE_ENV);
     console.log("DATABASE_URL set:", !!process.env.DATABASE_URL);
     console.log("REDIS_URL set:", !!process.env.REDIS_URL);
-    const app = await core_1.NestFactory.create(app_module_1.AppModule, {
-        cors: false,
-    });
+    const app = await core_1.NestFactory.create(app_module_1.AppModule, { cors: false });
     const configService = app.get(config_1.ConfigService);
     const prismaService = app.get(prisma_service_1.PrismaService);
     const frontendUrl = configService.get("app.frontendUrl") ?? "http://localhost:3000";
@@ -40,9 +38,7 @@ async function bootstrap() {
         whitelist: true,
         transform: true,
         forbidUnknownValues: false,
-        transformOptions: {
-            enableImplicitConversion: true,
-        },
+        transformOptions: { enableImplicitConversion: true },
     }));
     const swaggerConfig = new swagger_1.DocumentBuilder()
         .setTitle("StockNG API")
@@ -53,9 +49,9 @@ async function bootstrap() {
     const swaggerDocument = swagger_1.SwaggerModule.createDocument(app, swaggerConfig);
     swagger_1.SwaggerModule.setup("api/docs", app, swaggerDocument);
     await prismaService.enableShutdownHooks(app);
-    const port = configService.get("app.port") ?? 4000;
+    const port = parseInt(process.env.PORT || "4000", 10);
     console.log(`Attempting to listen on port: ${port}`);
-    await app.listen(port);
+    await app.listen(port, "0.0.0.0");
     console.log(`=== SERVER RUNNING ON PORT ${port} ===`);
 }
 bootstrap().catch((error) => {

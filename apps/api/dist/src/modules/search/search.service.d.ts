@@ -7,10 +7,10 @@ export declare class SearchService {
             id: string;
             createdAt: Date;
             updatedAt: Date;
+            description: string | null;
             ticker: string;
             companyName: string;
             sector: string;
-            description: string | null;
             currentPrice: number;
             dailyChange: number;
             percentChange: number;
@@ -30,13 +30,13 @@ export declare class SearchService {
             name: string;
             createdAt: Date;
             updatedAt: Date;
+            imageUrl: string | null;
             description: string | null;
             currentPrice: number;
             marketCap: number | null;
             trendScore: number;
             lastUpdatedAt: Date | null;
             coingeckoId: string;
-            imageUrl: string | null;
             change24h: number;
             volume24h: number | null;
             circulatingSupply: number | null;
@@ -47,21 +47,21 @@ export declare class SearchService {
             updatedAt: Date;
             assetType: import(".prisma/client").$Enums.AssetType | null;
             assetSymbol: string | null;
-            imageUrl: string | null;
-            slug: string;
-            categoryId: string | null;
             content: string;
-            sourceId: string | null;
+            slug: string;
             title: string;
             excerpt: string;
             source: string;
             sourceUrl: string;
             externalUrl: string | null;
             author: string | null;
+            imageUrl: string | null;
             categoryLabel: string | null;
             publishedAt: Date;
             isInsight: boolean;
             trendingScore: number;
+            categoryId: string | null;
+            sourceId: string | null;
         }[];
         articles: ({
             category: {
@@ -69,21 +69,21 @@ export declare class SearchService {
                 name: string;
                 createdAt: Date;
                 updatedAt: Date;
-                description: string | null;
                 slug: string;
+                description: string | null;
             } | null;
         } & {
+            status: import(".prisma/client").$Enums.ArticleStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
-            categoryId: string | null;
             content: string;
+            slug: string;
             title: string;
             excerpt: string;
             author: string;
             publishedAt: Date;
-            status: import(".prisma/client").$Enums.ArticleStatus;
+            categoryId: string | null;
             coverImage: string | null;
             authorAvatar: string | null;
             tags: string[];
@@ -92,16 +92,16 @@ export declare class SearchService {
             viewCount: number;
         })[];
         research: {
+            type: import(".prisma/client").$Enums.ResearchReportType;
+            status: import(".prisma/client").$Enums.ResearchReportStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             content: string;
+            slug: string;
             title: string;
             author: string;
-            status: import(".prisma/client").$Enums.ResearchReportStatus;
             tags: string[];
-            type: import(".prisma/client").$Enums.ResearchReportType;
             summary: string;
             coverPage: string | null;
             pdfUrl: string | null;

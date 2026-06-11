@@ -1,0 +1,185 @@
+{
+  "news": [
+    {
+      "name": "Equities",
+      "slug": "equities",
+      "description": "Nigerian stocks and company updates"
+    },
+    {
+      "name": "Crypto",
+      "slug": "crypto",
+      "description": "Cryptocurrency markets and blockchain insights"
+    },
+    {
+      "name": "Economy",
+      "slug": "economy",
+      "description": "Macroeconomic developments and policy updates"
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "description": "Financial literacy and explainers"
+    }
+  ],
+  "sectors": [
+    {
+      "name": "Banking",
+      "slug": "banking",
+      "description": "Banks and diversified financial services",
+      "icon": "Landmark",
+      "color": "#0f766e"
+    },
+    {
+      "name": "Consumer Goods",
+      "slug": "consumer-goods",
+      "description": "Food, household, and packaged goods companies",
+      "icon": "ShoppingBasket",
+      "color": "#ea580c"
+    },
+    {
+      "name": "Oil & Gas",
+      "slug": "oil-gas",
+      "description": "Energy producers and downstream operators",
+      "icon": "Fuel",
+      "color": "#dc2626"
+    },
+    {
+      "name": "Telecommunications",
+      "slug": "telecommunications",
+      "description": "Connectivity, towers, and telecom infrastructure",
+      "icon": "Signal",
+      "color": "#7c3aed"
+    },
+    {
+      "name": "Layer 1",
+      "slug": "layer-1",
+      "description": "Core blockchain settlement networks",
+      "icon": "Cpu",
+      "color": "#2563eb"
+    },
+    {
+      "name": "Stablecoins",
+      "slug": "stablecoins",
+      "description": "Dollar-pegged digital assets and settlement rails",
+      "icon": "Shield",
+      "color": "#059669"
+    },
+    {
+      "name": "Payments",
+      "slug": "payments",
+      "description": "Financial rails, merchant services, and payment infrastructure",
+      "icon": "Wallet",
+      "color": "#0891b2"
+    },
+    {
+      "name": "Commodities",
+      "slug": "commodities",
+      "description": "Commodity-linked businesses and inflation hedges",
+      "icon": "Gem",
+      "color": "#ca8a04"
+    }
+  ],
+  "articles": [
+    {
+      "name": "Investing Basics",
+      "slug": "investing-basics",
+      "description": "Foundational investing concepts for beginners"
+    },
+    {
+      "name": "NGX Playbook",
+      "slug": "ngx-playbook",
+      "description": "How to approach Nigerian equities with clarity"
+    },
+    {
+      "name": "Crypto Education",
+      "slug": "crypto-education",
+      "description": "Core crypto concepts and risk management"
+    },
+    {
+      "name": "Personal Finance",
+      "slug": "personal-finance",
+      "description": "Cash flow, saving, and compounding ideas"
+    }
+  ],
+  "providers": [
+    {
+      "name": "NGX Group",
+      "slug": "ngx",
+      "baseUrl": "https://ngxgroup.com",
+      "priority": 1,
+      "rateLimitPerMin": 30
+    },
+    {
+      "name": "NGX Pulse",
+      "slug": "ngx-pulse",
+      "baseUrl": "https://ngxgroup.com",
+      "priority": 2,
+      "rateLimitPerMin": 30
+    },
+    {
+      "name": "NGN Market Mirror",
+      "slug": "ngn-market",
+      "baseUrl": "https://example.com/ngn-market",
+      "priority": 3,
+      "rateLimitPerMin": 20
+    },
+    {
+      "name": "iTick",
+      "slug": "itick",
+      "baseUrl": "https://example.com/itick",
+      "priority": 4,
+      "rateLimitPerMin": 20
+    },
+    {
+      "name": "EODHD",
+      "slug": "eodhd",
+      "baseUrl": "https://eodhd.com",
+      "priority": 5,
+      "rateLimitPerMin": 60
+    }
+  ],
+  "newsSources": [
+    {
+      "name": "Nairametrics",
+      "slug": "nairametrics",
+      "baseUrl": "https://nairametrics.com",
+      "fetchStrategy": "RSS"
+    },
+    {
+      "name": "Punch Business",
+      "slug": "punch-business",
+      "baseUrl": "https://punchng.com/topics/business/",
+      "fetchStrategy": "RSS"
+    },
+    {
+      "name": "The Guardian Business",
+      "slug": "guardian-business",
+      "baseUrl": "https://guardian.ng/category/business-services/",
+      "fetchStrategy": "RSS"
+    },
+    {
+      "name": "BusinessDay",
+      "slug": "businessday",
+      "baseUrl": "https://businessday.ng",
+      "fetchStrategy": "RSS"
+    },
+    {
+      "name": "TechCabal",
+      "slug": "techcabal",
+      "baseUrl": "https://techcabal.com",
+      "fetchStrategy": "RSS"
+    },
+    {
+      "name": "Techpoint Africa",
+      "slug": "techpoint-africa",
+      "baseUrl": "https://techpoint.africa",
+      "fetchStrategy": "RSS"
+    },
+    {
+      "name": "CoinGecko",
+      "slug": "coingecko",
+      "baseUrl": "https://www.coingecko.com",
+      "fetchStrategy": "API"
+    }
+  ]
+}

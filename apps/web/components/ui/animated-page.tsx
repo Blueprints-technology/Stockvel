@@ -3,51 +3,18 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
-// ─── Variants ────────────────────────────────────────────────────────────────
-
-const pageVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.02,
-      when: "beforeChildren",
-    },
-  },
-};
-
-const blockVariants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-    scale: 0.98,
-    filter: "blur(4px)",
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    filter: "blur(0px)",
-    transition: {
-      type: "spring",
-      stiffness: 260,
-      damping: 24,
-      mass: 0.8,
-    },
-  },
-};
-
-const reducedVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { duration: 0.15 },
-  },
-};
+import {
+  blurBlockVariants,
+  cardHoverVariants,
+  cardTapVariants,
+  createSlideVariants,
+  numberVariants,
+  pageVariants,
+  reducedBlockVariants,
+  reducedPageVariants,
+  reducedSlideVariants,
+  springBlockVariants,
+} from "@/components/ui/animation-utils";
 
 // ─── Components ──────────────────────────────────────────────────────────────
 
@@ -62,7 +29,7 @@ export function AnimatedPage({
 
   return (
     <motion.div
-      variants={shouldReduce ? reducedVariants : pageVariants}
+      variants={shouldReduce ? reducedPageVariants : pageVariants}
       initial="hidden"
       animate="show"
       className={cn("space-y-6", className)}
@@ -72,20 +39,35 @@ export function AnimatedPage({
   );
 }
 
+/**
+ * Block-level entrance animation.
+ *
+ * @param useBlur — Whether to include the blur filter effect. Defaults to `true`.
+ *   When `true`, uses a tween transition to prevent negative blur values.
+ *   When `false`, uses a spring transition for a snappier feel on opacity/transform only.
+ */
 export function AnimatedBlock({
   children,
   className,
   delay = 0,
+  useBlur = true,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  useBlur?: boolean;
 }) {
   const shouldReduce = useReducedMotion();
 
+  const variants = shouldReduce
+    ? reducedBlockVariants
+    : useBlur
+      ? blurBlockVariants
+      : springBlockVariants;
+
   return (
     <motion.div
-      variants={shouldReduce ? reducedVariants : blockVariants}
+      variants={variants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-60px" }}
@@ -97,8 +79,6 @@ export function AnimatedBlock({
   );
 }
 
-// ─── Extras ──────────────────────────────────────────────────────────────────
-
 /** Wrap a card or panel for a hover lift + subtle shadow pop */
 export function AnimatedCard({
   children,
@@ -109,13 +89,8 @@ export function AnimatedCard({
 }) {
   return (
     <motion.div
-      whileHover={{
-        y: -4,
-        scale: 1.01,
-        boxShadow: "0 12px 32px rgba(0,0,0,0.10)",
-        transition: { type: "spring", stiffness: 400, damping: 20 },
-      }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={cardHoverVariants}
+      whileTap={cardTapVariants}
       className={className}
     >
       {children}
@@ -135,25 +110,12 @@ export function AnimatedSlide({
 }) {
   const shouldReduce = useReducedMotion();
 
-  const directions = {
-    left: { x: -32, y: 0 },
-    right: { x: 32, y: 0 },
-    top: { x: 0, y: -32 },
-    bottom: { x: 0, y: 32 },
-  };
-
   return (
     <motion.div
-      initial={
-        shouldReduce ? { opacity: 0 } : { opacity: 0, ...directions[from] }
-      }
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      variants={shouldReduce ? reducedSlideVariants : createSlideVariants(from)}
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: true, margin: "-40px" }}
-      transition={
-        shouldReduce
-          ? { duration: 0.15 }
-          : { type: "spring", stiffness: 280, damping: 26, mass: 0.9 }
-      }
       className={className}
     >
       {children}
@@ -172,9 +134,9 @@ export function AnimatedNumber({
   return (
     <motion.span
       key={value}
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      variants={numberVariants}
+      initial="hidden"
+      animate="show"
       className={className}
     >
       {value}
