@@ -66,7 +66,6 @@ const config: Config = {
       },
       boxShadow: {
         card: "0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04)",
-        // Hover state
         "card-hover": "0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)",
         elevated: "0 10px 30px rgba(15,23,42,0.12)",
       },
@@ -85,10 +84,20 @@ const config: Config = {
         ],
         body: ["0.875rem", { lineHeight: "1.6" }],
         caption: ["0.75rem", { lineHeight: "1.5" }],
-        data: [
-          "0.875rem",
-          { lineHeight: "1.5", fontFamily: "JetBrains Mono, monospace" },
-        ],
+        data: ["0.875rem", { lineHeight: "1.5" }],
+      },
+      keyframes: {
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(18px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        ticker: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        ticker: "ticker 28s linear infinite",
       },
     },
   },
