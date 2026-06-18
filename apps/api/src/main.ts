@@ -11,9 +11,13 @@ import { PrismaService } from "./prisma/prisma.service";
 setDefaultResultOrder("ipv4first");
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
-    cors: false,
-  });
+  console.log("=== BOOTSTRAP START ===");
+  console.log("Raw process.env.PORT:", process.env.PORT);
+  console.log("NODE_ENV:", process.env.NODE_ENV);
+  console.log("DATABASE_URL set:", !!process.env.DATABASE_URL);
+  console.log("REDIS_URL set:", !!process.env.REDIS_URL);
+
+  const app = await NestFactory.create(AppModule, { cors: false });
 
   const configService = app.get(ConfigService);
   const prismaService = app.get(PrismaService);
@@ -37,9 +41,7 @@ async function bootstrap() {
       whitelist: true,
       transform: true,
       forbidUnknownValues: false,
-      transformOptions: {
-        enableImplicitConversion: true,
-      },
+      transformOptions: { enableImplicitConversion: true },
     }),
   );
 
@@ -55,7 +57,17 @@ async function bootstrap() {
   SwaggerModule.setup("api/docs", app, swaggerDocument);
 
   await prismaService.enableShutdownHooks(app);
-  await app.listen(configService.get<number>("app.port") ?? 4001);
+
+  const port = parseInt(process.env.PORT || "4000", 10);
+  console.log(`Attempting to listen on port: ${port}`);
+
+  await app.listen(port, "0.0.0.0");
+
+  console.log(`=== SERVER RUNNING ON PORT ${port} ===`);
 }
 
-bootstrap();
+bootstrap().catch((error) => {
+  console.error("=== BOOTSTRAP FAILED ===");
+  console.error(error);
+  process.exit(1);
+});
