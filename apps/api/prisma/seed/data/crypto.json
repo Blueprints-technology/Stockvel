@@ -1,0 +1,67 @@
+[
+  {
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "coingeckoId": "bitcoin",
+    "sectorSlug": "layer-1",
+    "currentPrice": 103500,
+    "marketCap": 2050000000000,
+    "change24h": 2.8,
+    "volume24h": 45000000000,
+    "circulatingSupply": 19700000,
+    "trendScore": 100,
+    "imageUrl": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
+  },
+  {
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "coingeckoId": "ethereum",
+    "sectorSlug": "layer-1",
+    "currentPrice": 3800,
+    "marketCap": 456000000000,
+    "change24h": 4.1,
+    "volume24h": 29000000000,
+    "circulatingSupply": 120200000,
+    "trendScore": 97,
+    "imageUrl": "https://assets.coingecko.com/coins/images/279/large/ethereum.png"
+  },
+  {
+    "symbol": "SOL",
+    "name": "Solana",
+    "coingeckoId": "solana",
+    "sectorSlug": "layer-1",
+    "currentPrice": 182,
+    "marketCap": 84000000000,
+    "change24h": 5.4,
+    "volume24h": 4500000000,
+    "circulatingSupply": 467000000,
+    "trendScore": 91,
+    "imageUrl": "https://assets.coingecko.com/coins/images/4128/large/solana.png"
+  },
+  {
+    "symbol": "USDT",
+    "name": "Tether",
+    "coingeckoId": "tether",
+    "sectorSlug": "stablecoins",
+    "currentPrice": 1,
+    "marketCap": 140000000000,
+    "change24h": 0.02,
+    "volume24h": 96000000000,
+    "circulatingSupply": 140000000000,
+    "trendScore": 70,
+    "imageUrl": "https://assets.coingecko.com/coins/images/325/large/Tether.png"
+  },
+  {
+    "symbol": "BNB",
+    "name": "BNB",
+    "coingeckoId": "binancecoin",
+    "sectorSlug": "payments",
+    "currentPrice": 710,
+    "marketCap": 103000000000,
+    "change24h": 1.8,
+    "volume24h": 2200000000,
+    "circulatingSupply": 145000000,
+    "trendScore": 83,
+    "imageUrl": "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png"
+  }
+]
