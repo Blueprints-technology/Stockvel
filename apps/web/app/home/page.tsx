@@ -53,7 +53,9 @@ export default function HomePage() {
   const queryClient = useQueryClient();
   const { data } = useQuery({ queryKey: ["overview"], queryFn: fetchOverview });
   const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") ?? "");
+  const [searchQuery, setSearchQuery] = useState(
+    () => searchParams?.get("q") ?? "",
+  );
 
   useSocket("market:overview", () =>
     queryClient.invalidateQueries({ queryKey: ["overview"] }),
@@ -70,7 +72,7 @@ export default function HomePage() {
       <AnimatedPage>
         <AnimatedBlock className="grid gap-4 lg:grid-cols-4">
           <StatCard
-            title="Nigerian market cap"
+            title="NGN market cap"
             value={currency(data?.marketCap ?? 0)}
             hint="Cached and refreshed from backend collectors"
           />
@@ -93,8 +95,8 @@ export default function HomePage() {
 
         <AnimatedBlock>
           <InstantSearch
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
+            externalQuery={searchQuery}
+            onQueryChange={setSearchQuery}
           />
         </AnimatedBlock>
 
@@ -135,7 +137,6 @@ export default function HomePage() {
                 const Icon = item.icon;
                 return (
                   <Link key={item.href} href={item.href}>
-                    {/* ✨ Wrap in AnimatedCard */}
                     <AnimatedCard className="h-full">
                       <Card className="h-full space-y-4">
                         <div className="inline-flex rounded-2xl bg-blue-50 p-3 text-brand">
