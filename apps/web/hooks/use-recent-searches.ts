@@ -1,14 +1,15 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const STORAGE_KEY = 'marketpulse_recent_searches';
+const STORAGE_KEY = "stockvel_recent_searches";
 
 export function useRecentSearches() {
   const [items, setItems] = useState<string[]>([]);
 
   useEffect(() => {
-    const stored = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+    const stored =
+      typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
     if (stored) {
       setItems(JSON.parse(stored));
     }
